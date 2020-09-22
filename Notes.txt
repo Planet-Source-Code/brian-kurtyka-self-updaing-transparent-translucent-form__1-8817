@@ -1,0 +1,14 @@
+This is a self updaing transparent / translucent form. It's cthru!
+I expanded on Kevin Tupper's work after he posted code using BoS's blending dll. I needed to have the form update when the background changed so I rewrote the routines and added the new code. If you have any comments or suggestions, have at it. (exarkun@angelwire.com)
+
+Variables You Set:
+cthru - (0-255) - set opacity
+
+Side Effects:
+- The form flickers slightly while it hides it self to take the clean snapshot of the background.
+
+In General:
+- The two "SetWindowPos" routines are cranky. They don't want to accept variables as their sizes. The numbers have to be hard coded in at design time.
+- In the "Paint" routine you'll need to rem out some statements depending on whether the form will have a border or not. (It's clearly marked)
+- Msimg32.dll & Alphablending.dll are in the zip. If your computer does not have these files you may need to install them before running the project.
+- Next I want to include region clipping so I can round off the edges of the window. I have no idea if this will affect the blending routine.
